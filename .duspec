@@ -1,0 +1,23 @@
+{
+  "id":"Deltics.CommandLine",
+  "version":"",
+  "summary":"A lightweight framework for parsing command line arguments.",
+  "tags":[
+    "deltics",
+    "command line"
+  ],
+  "copyright":"\u00A92020 Jolyon Direnko-Smith",
+  "language":"en",
+  "content":"source",
+  "dependencies":[
+    "deltics.strings"
+  ],
+  "source":{
+      "files":[
+        "src\\Deltics.CommandLine.pas",
+        "src\\Deltics.CommandLine.Interfaces.pas",
+        "src\\Deltics.CommandLine.Options.pas",
+        "src\\Deltics.CommandLine.Utils.pas"
+      ]
+    }
+}
