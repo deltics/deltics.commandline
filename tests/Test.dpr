@@ -1,4 +1,4 @@
-program Deltics.CommandLine.Tests;
+program Test;
 
 {$APPTYPE CONSOLE}
 
