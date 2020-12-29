@@ -1,4 +1,4 @@
-﻿{
+{
   * X11 (MIT) LICENSE *
 
   Copyright © 2011 Jolyon Smith
@@ -37,13 +37,7 @@
   website         : <EXTLINK http://www.deltics.co.nz>www.deltics.co.nz</EXTLINK>
 }
 
-{$i deltics.rtl.inc}
-
-{.$ifdef deltics_commandline}
-  {$debuginfo ON}
-{.$else}
-  {.$debuginfo OFF}
-{.$endif}
+{$i deltics.commandline.inc}
 
   unit Deltics.CommandLine;
 
@@ -55,9 +49,8 @@ interface
     Classes,
     SysUtils,
   { deltics: }
-    Deltics.Classes,
+    Deltics.InterfacedObjects,
     Deltics.Strings,
-    Deltics.Types,
     Deltics.CommandLine.Interfaces,
     Deltics.CommandLine.Utils;
 
@@ -76,10 +69,10 @@ interface
 
     TCommandLine = class(TComInterfacedObject, ICommandLine)
     private
-      fArguments: IStringList;                // The list of any args that are NOT switches or switch values
+      fArguments: IStringList;                // The list of ALL command line arguments
       fCommandLine: String;
       fExeFilename: String;
-      fParams: IStringList;                   // The list of ALL command line params
+      fParams: IStringList;                   // The list of arguments that are NOT switches or switch values
       fOptions: ICommandLineOptions;
       function get_Arguments: IStringList;
       function get_AsString: String;
@@ -202,7 +195,7 @@ implementation
     switch: String;
     values: IStringList;
   begin
-    i           := 1;
+    i         := 1;
     argCount  := fArguments.Count;
     while i < argCount do
     begin

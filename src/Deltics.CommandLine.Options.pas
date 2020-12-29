@@ -1,10 +1,13 @@
-﻿
+
+{$i deltics.commandline.inc}
+
   unit Deltics.CommandLine.Options;
+
 
 interface
 
   uses
-    Deltics.Classes,
+    Deltics.InterfacedObjects,
     Deltics.Strings,
     Deltics.CommandLine.Interfaces;
 
@@ -47,7 +50,7 @@ interface
       function Contains(const aOption: String; var aValue: String): Boolean; overload;
       function Contains(const aOption: String; var aValues: IStringList): Boolean; overload;
     private
-      fCommandLine: TWeakInterface;
+      fCommandLine: TWeakInterfaceReference;
       procedure AddOption(const aOption: String; const aValues: IStringList);
       function get_CommandLine: ICommandLine;
     public
@@ -197,7 +200,7 @@ implementation
   begin
     inherited Create;
 
-    fCommandLine := TWeakInterface.Create(aCommandLine);
+    fCommandLine := TWeakInterfaceReference.Create(aCommandLine);
   end;
 
 
@@ -255,7 +258,7 @@ implementation
     begin
       opt := cmd.Options[i];
 
-      result := opt.Name.EqualsText(aString);
+      result := STR.SameText(opt.Name, aString);
       if result then
       begin
         aOption := opt;

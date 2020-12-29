@@ -10,10 +10,16 @@
   "language":"en",
   "content":"source",
   "dependencies":[
-    "deltics.strings"
+    "deltics.inc:1.1.0",
+    "deltics.contracts:2.0.0",
+    "deltics.exceptions:1.1.0",
+    "deltics.interfacedobjects:1.1.1",
+    "deltics.reversebytes:1.0.0",
+    "deltics.strings:1.0.0"
   ],
   "source":{
       "files":[
+        "src\\deltics.commandLine.inc",
         "src\\Deltics.CommandLine.pas",
         "src\\Deltics.CommandLine.Interfaces.pas",
         "src\\Deltics.CommandLine.Options.pas",
