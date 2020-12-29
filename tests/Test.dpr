@@ -3,7 +3,6 @@
 program Test;
 
 uses
-  System.SysUtils,
   Deltics.Smoketest,
   UtilsTests in 'UtilsTests.pas',
   Deltics.CommandLine.Interfaces in '..\src\Deltics.CommandLine.Interfaces.pas',
