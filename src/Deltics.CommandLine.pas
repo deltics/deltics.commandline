@@ -1,4 +1,4 @@
-﻿{
+{
   * X11 (MIT) LICENSE *
 
   Copyright © 2011 Jolyon Smith

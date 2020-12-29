@@ -1,4 +1,4 @@
-﻿
+
 {$i deltics.commandline.inc}
 
   unit Deltics.CommandLine.Options;
