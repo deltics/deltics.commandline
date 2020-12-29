@@ -31,6 +31,12 @@ implementation
       2 args:   arg1 arg2prefix;"arg 2 value";arg2suffix
       2 args:   arg1 arg2prefix;"arg ""2"" value";arg2suffix
   }
+
+    procedure AddArg(const aArg: String);
+    begin
+      result.Add(STR.Unquote(aArg));
+    end;
+
   const
     WHITESPACE = [' ', #8];
   var
@@ -74,7 +80,7 @@ implementation
       begin
         if (arg <> '') then
         begin
-          result.Add(arg);
+          AddArg(arg);
           arg := '';
         end;
 
@@ -89,7 +95,7 @@ implementation
     end;
 
     if (arg <> '') then
-      result.Add(arg);
+      AddArg(arg);
   end;
 
 
