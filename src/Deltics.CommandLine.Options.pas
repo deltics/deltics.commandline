@@ -1,5 +1,8 @@
 ﻿
+{$i deltics.commandline.inc}
+
   unit Deltics.CommandLine.Options;
+
 
 interface
 
@@ -255,7 +258,7 @@ implementation
     begin
       opt := cmd.Options[i];
 
-      result := opt.Name.EqualsText(aString);
+      result := STR.SameText(opt.Name, aString);
       if result then
       begin
         aOption := opt;
