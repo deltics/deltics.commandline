@@ -10,7 +10,7 @@
   "language":"en",
   "content":"source",
   "dependencies":[
-    "deltics.inc:1.0.4",
+    "deltics.inc:1.1.0",
     "deltics.contracts:2.0.0",
     "deltics.exceptions:1.1.0",
     "deltics.interfacedobjects:1.1.1",
