@@ -1,7 +1,7 @@
 {
-  platform: "windows",
-  references: [
+  "platform":"windows",
+  "references":[
     "&..\\.duspec",
-    "deltics.smoketest:2.4.1"
+    "deltics.smoketest:2.9.0"
   ]
 }
