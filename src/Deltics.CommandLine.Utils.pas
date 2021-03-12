@@ -4,7 +4,8 @@
 interface
 
   uses
-    Deltics.Strings;
+    Deltics.Strings,
+    Deltics.Strings.Lists;
 
   type
     CommandLineUtils = class
@@ -44,7 +45,7 @@ implementation
     arg: String;
     inQuote: Boolean;
   begin
-    result := TComInterfacedStringList.Create;
+    result := TStringList.CreateManaged;
 
     inQuote := FALSE;
     arg     := '';

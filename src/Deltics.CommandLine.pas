@@ -50,7 +50,7 @@ interface
     SysUtils,
   { deltics: }
     Deltics.InterfacedObjects,
-    Deltics.Strings,
+    Deltics.Strings.Lists,
     Deltics.CommandLine.Interfaces,
     Deltics.CommandLine.Utils;
 
@@ -92,6 +92,7 @@ interface
 implementation
 
   uses
+    Deltics.Strings,
     Deltics.CommandLine.Options;
 
 
@@ -127,7 +128,7 @@ implementation
 
     cmd := self as ICommandLine;
 
-    fParams   := TComInterfacedStringList.Create;
+    fParams   := TStringList.CreateManaged;
     fOptions  := TCommandLineOptions.Create(cmd);
 
     if fCommandLine <> '' then
@@ -203,7 +204,7 @@ implementation
 
       if CommandLineUtils.IsSwitch(arg, switch, value) then
       begin
-        values := TComInterfacedStringList.Create;
+        values := TStringList.CreateManaged;
 
         while (value <> '') do
           values.Add(STR.Unquote(STR.ExtractQuotedValue(value, ';')));
