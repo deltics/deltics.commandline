@@ -4,8 +4,8 @@
 interface
 
   uses
-    Deltics.Strings,
-    Deltics.Strings.Lists;
+    Deltics.StringLists,
+    Deltics.Strings;
 
   type
     CommandLineUtils = class

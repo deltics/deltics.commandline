@@ -5,8 +5,8 @@ interface
 
   uses
     SysUtils,
-    Deltics.Strings.Lists,
-    Deltics.StringTypes;
+    Deltics.StringLists,
+    Deltics.Strings;
 
 
   type

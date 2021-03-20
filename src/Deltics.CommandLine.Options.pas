@@ -8,7 +8,8 @@ interface
 
   uses
     Deltics.InterfacedObjects,
-    Deltics.Strings.Lists,
+    Deltics.StringLists,
+    Deltics.Strings,
     Deltics.CommandLine.Interfaces;
 
 

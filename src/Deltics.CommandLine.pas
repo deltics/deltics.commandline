@@ -1,4 +1,4 @@
-{
+﻿{
   * X11 (MIT) LICENSE *
 
   Copyright © 2011 Jolyon Smith
@@ -50,7 +50,8 @@ interface
     SysUtils,
   { deltics: }
     Deltics.InterfacedObjects,
-    Deltics.Strings.Lists,
+    Deltics.StringLists,
+    Deltics.Strings,
     Deltics.CommandLine.Interfaces,
     Deltics.CommandLine.Utils;
 
