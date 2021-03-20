@@ -15,8 +15,8 @@
     "deltics.exceptions:1.1.0",
     "deltics.interfacedobjects:1.2.0",
     "deltics.reversebytes:1.0.0",
-    "deltics.strings:2.0.0-beta.15",
-    "deltics.strings.lists:2.0.0-beta.3"
+    "deltics.strings:2.0.0",
+    "deltics.stringlists:2.0.0"
   ],
   "source":{
       "files":[

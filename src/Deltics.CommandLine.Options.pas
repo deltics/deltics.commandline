@@ -9,7 +9,6 @@ interface
   uses
     Deltics.InterfacedObjects,
     Deltics.StringLists,
-    Deltics.Strings,
     Deltics.CommandLine.Interfaces;
 
 
