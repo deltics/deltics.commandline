@@ -23,6 +23,7 @@ implementation
 
   uses
     Deltics.Strings,
+    Deltics.StringLists,
     Deltics.CommandLine.Utils;
 
 

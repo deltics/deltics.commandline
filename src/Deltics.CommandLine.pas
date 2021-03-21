@@ -1,7 +1,7 @@
 {
   * X11 (MIT) LICENSE *
 
-  Copyright © 2011 Jolyon Smith
+  Copyright � 2011 Jolyon Smith
 
   Permission is hereby granted, free of charge, to any person obtaining a copy of
    this software and associated documentation files (the "Software"), to deal in
@@ -50,7 +50,7 @@ interface
     SysUtils,
   { deltics: }
     Deltics.InterfacedObjects,
-    Deltics.Strings,
+    Deltics.StringLists,
     Deltics.CommandLine.Interfaces,
     Deltics.CommandLine.Utils;
 
@@ -92,6 +92,7 @@ interface
 implementation
 
   uses
+    Deltics.Strings,
     Deltics.CommandLine.Options;
 
 
@@ -127,7 +128,7 @@ implementation
 
     cmd := self as ICommandLine;
 
-    fParams   := TComInterfacedStringList.Create;
+    fParams   := TStringList.CreateManaged;
     fOptions  := TCommandLineOptions.Create(cmd);
 
     if fCommandLine <> '' then
@@ -203,7 +204,7 @@ implementation
 
       if CommandLineUtils.IsSwitch(arg, switch, value) then
       begin
-        values := TComInterfacedStringList.Create;
+        values := TStringList.CreateManaged;
 
         while (value <> '') do
           values.Add(STR.Unquote(STR.ExtractQuotedValue(value, ';')));

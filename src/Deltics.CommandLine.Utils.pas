@@ -4,6 +4,7 @@
 interface
 
   uses
+    Deltics.StringLists,
     Deltics.Strings;
 
   type
@@ -44,7 +45,7 @@ implementation
     arg: String;
     inQuote: Boolean;
   begin
-    result := TComInterfacedStringList.Create;
+    result := TStringList.CreateManaged;
 
     inQuote := FALSE;
     arg     := '';

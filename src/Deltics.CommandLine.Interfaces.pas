@@ -5,6 +5,7 @@ interface
 
   uses
     SysUtils,
+    Deltics.StringLists,
     Deltics.Strings;
 
 
@@ -42,9 +43,9 @@ interface
       function get_Values: IStringList;
       function IsEnabled: Boolean; overload;
       function IsEnabled(var aValue: String): Boolean; overload;
-      function IsEnabled(var aValues: TStringArray): Boolean; overload;
+      function IsEnabled(var aValues: StringArray): Boolean; overload;
       function ValueOrDefault(const aDefault: String): String; overload;
-      function ValueOrDefault(const aDefaults: TStringArray): IStringList; overload;
+      function ValueOrDefault(const aDefaults: StringArray): IStringList; overload;
       function ValueOrDefault(const aDefaults: IStringList): IStringList; overload;
       property Alts: IStringList read get_Alts;
       property Name: String read get_Name;

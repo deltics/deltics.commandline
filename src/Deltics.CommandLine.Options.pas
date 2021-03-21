@@ -8,7 +8,7 @@ interface
 
   uses
     Deltics.InterfacedObjects,
-    Deltics.Strings,
+    Deltics.StringLists,
     Deltics.CommandLine.Interfaces;
 
 
@@ -32,9 +32,9 @@ interface
     public
       function IsEnabled: Boolean; overload;
       function IsEnabled(var aValue: String): Boolean; overload;
-      function IsEnabled(var aValues: TStringArray): Boolean; overload;
+      function IsEnabled(var aValues: StringArray): Boolean; overload;
       function ValueOrDefault(const aDefault: String): String; overload;
-      function ValueOrDefault(const aDefaults: TStringArray): IStringList; overload;
+      function ValueOrDefault(const aDefaults: StringArray): IStringList; overload;
       function ValueOrDefault(const aDefaults: IStringList): IStringList; overload;
       property Name: String read get_Name;
       property Values: IStringList read get_Values;
@@ -61,12 +61,17 @@ interface
 
 implementation
 
+  uses
+    Deltics.Strings;
+
+
+
 
   function CommandLineArgsAsStringList: IStringList;
   var
     i: Integer;
   begin
-    result := TComInterfacedStringList.Create;
+    result := TStringList.CreateManaged;
 
     for i := 1 to Pred(ParamCount) do
       result.Add(ParamStr(i));
@@ -93,7 +98,7 @@ implementation
   var
     values: IStringList;
   begin
-    values := TComInterfacedStringList.Create;
+    values := TStringList.CreateManaged;
     values.Add(aValue);
 
     Create(aName, values, FALSE);
@@ -130,7 +135,7 @@ implementation
 
   function TCommandLineOption.get_Values: IStringList;
   begin
-    result := TComInterfacedStringList.Create;
+    result := TStringList.CreateManaged;
     result.Add(fValues);
   end;
 
@@ -150,7 +155,7 @@ implementation
   end;
 
 
-  function TCommandLineOption.IsEnabled(var aValues: TStringArray): Boolean;
+  function TCommandLineOption.IsEnabled(var aValues: StringArray): Boolean;
   begin
     result := fIsEnabled;
 
@@ -168,11 +173,11 @@ implementation
   end;
 
 
-  function TCommandLineOption.ValueOrDefault(const aDefaults: TStringArray): IStringList;
+  function TCommandLineOption.ValueOrDefault(const aDefaults: StringArray): IStringList;
   begin
     if NOT IsEnabled then
     begin
-      result := TComInterfacedStringList.Create;
+      result := TStringList.CreateManaged;
       result.Add(aDefaults);
     end
     else
@@ -184,7 +189,7 @@ implementation
   begin
     if NOT IsEnabled then
     begin
-      result := TComInterfacedStringList.Create;
+      result := TStringList.CreateManaged;
       result.Add(aDefaults);
     end
     else
@@ -209,7 +214,7 @@ implementation
     switch: ICommandLineOption;
     values: IStringList;
   begin
-    values := TComInterfacedStringList.Create;
+    values := TStringList.CreateManaged;
     values.Add(aValues);
 
     switch := TCommandLineOption.Create(aOption, values, TRUE);
